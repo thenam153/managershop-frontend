@@ -26,16 +26,6 @@
                     </span>
                     <input v-model="description" type="text">
                 </label>
-                <label>
-                    <span>
-                        Nhân viên: 
-                    </span>
-                    <select v-model="idEmployee" >
-                        <option v-for="employee in employees" v-bind:key="employee.id" :value="employee.id">
-                            {{ decodeURI(employee.name) }}
-                        </option>
-                    </select>
-                </label>
                 <button @click.prevent="submitData">
                     Tạo thông tin nhà cung cấp
                 </button>
@@ -67,7 +57,6 @@ export default {
             phone: "",
             address: "",
             description: "",
-            idEmployee: "",
             employees: [],
             provider: null,
             header: ["STT","Họ và tên", "Số điện thoại", "Địa chỉ", "Chi tiết", "Nhân viên"],
@@ -120,7 +109,7 @@ export default {
                         phone: encodeURI(this.phone),
                         address: encodeURI(this.address),
                         description: encodeURI(this.description),
-                        idEmployee: encodeURI(this.idEmployee)
+                        idEmployee: this.$store.state.id
                     }
             })
             .then(res => {  

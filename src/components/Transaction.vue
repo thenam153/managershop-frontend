@@ -138,7 +138,7 @@ export default {
                 },
                 data: {
                     idCustomer: (this.selected || {}).id,
-                    idEmployee: 4
+                    idEmployee: this.$store.state.id
                 }
             })
             .then(res => {

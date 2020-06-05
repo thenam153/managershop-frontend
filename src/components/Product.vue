@@ -1,9 +1,6 @@
 <template>
     <div>
         {{title}}
-        <button @click="clickLogout">
-            Đăng xuất
-        </button>
         <form>
                 <label>
                     <span>
@@ -125,7 +122,7 @@ export default {
                         quantily: encodeURI(this.quantily),
                         description: encodeURI(this.description),
                         idProvider: encodeURI(this.idProvider),
-                        idEmployee: 4
+                        idEmployee: this.$store.state.id
                     }
             })
             .then(res => {  
@@ -212,10 +209,6 @@ export default {
                     this.product = res.data
                 })
             })
-        },
-        clickLogout() {
-            localStorage.authenticate = false;
-            this.$router.push('/dang-nhap')
         }
     },
     watch: {

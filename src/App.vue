@@ -1,12 +1,17 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div id="nav" v-if="$store.state.login">
       <router-link to="/san-pham">Sản phẩm</router-link> |
       <router-link to="/khach-hang">Khách hàng</router-link>
       <router-link to="/cung-cap">Nhà cung cấp</router-link>
       <router-link to="/tao-giao-dich">Tạo đơn hàng</router-link>
       <router-link to="/nhan-vien">Nhân viên</router-link>
       <router-link to="/giao-dich">Chi tiết giao dịch</router-link>
+    </div>
+    <div v-if="$store.state.login">
+      <button @click="$store.dispatch('rejectLogin');$store.commit('setId', -1); $router.push('/dang-nhap');">
+        Đăng xuất
+      </button>
     </div>
     <router-view/>
   </div>

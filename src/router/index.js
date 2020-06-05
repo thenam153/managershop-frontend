@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import { Product, Customer, Transaction, Provider, Employee, TransactionDetail, Login } from '../components/index'
-
+import store from '../store'
 
 Vue.use(VueRouter)
 
@@ -88,8 +88,7 @@ const routes = [
       title: "Đăng nhập"
     }, 
     beforeEnter(to, from, next) {
-      if(localStorage.authenticate) {
-
+      if(store.state.login) {
         return next({path: '/san-pham'})
       }
       next()
@@ -104,7 +103,7 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if(localStorage.authenticate === "true") {
+  if(store.state.login) {
     return next();
   }
   if(to.meta.requireAuth ) {
