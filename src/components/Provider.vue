@@ -95,6 +95,9 @@ export default {
                 this.provider = res.data
             })
         })
+        // init 
+        this.employees = JSON.parse('[{"name":"aaaa","phone":"sssss","dateofbirth":"sssss","identification":"sssss","address":"ssssdss","username":"namthe153","password":"123456","level":0,"id":4,"listResult":[]},{"name":"qeqweqwe","phone":"vqeqweqwe","dateofbirth":"qeqweqwe","identification":"qeqweqwe","address":"qeqweqwe","username":"qeqweqwe","password":"qeqweqwe","level":0,"id":6,"listResult":[]}]');
+        this.provider = JSON.parse('[{"name":"aaaaaaaaa","phone":"sdfsdf","address":"dfsdf","status":"0","description":"aaa","createat":"Jun 4, 2020 2:23:29 PM","updateat":"Jun 4, 2020 2:27:17 PM","idEmployee":6,"id":8,"listResult":[]},{"name":"provider","phone":"provider","address":"provider","status":"0","description":"provider","createat":"Jun 4, 2020 2:27:43 PM","updateat":"Jun 4, 2020 2:27:43 PM","idEmployee":6,"id":9,"listResult":[]},{"name":"%2525C3%2525A1dasdads","phone":"","address":"aaaa%C3%A1da%C3%A2sd","status":"0","description":"adsasdadsasd","createat":"Jun 4, 2020 2:27:44 PM","updateat":"Jun 4, 2020 4:50:20 PM","idEmployee":6,"id":10,"listResult":[]},{"name":"%C3%A1dasd","phone":"%C3%A1dads","address":"sdasd","status":"0","description":"%E1%BA%A5cdasdasd","createat":"Jun 4, 2020 2:27:50 PM","updateat":"Jun 4, 2020 2:27:50 PM","idEmployee":4,"id":11,"listResult":[]},{"name":"q%C6%B0eqe","phone":"q1231","address":"312312","status":"0","description":"12312313","createat":"Jun 5, 2020 9:20:20 PM","updateat":"Jun 5, 2020 9:20:20 PM","idEmployee":4,"id":12,"listResult":[]}]')
     },
     methods: {
         submitData() {
