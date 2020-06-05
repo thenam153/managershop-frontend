@@ -4,8 +4,9 @@
       <router-link to="/san-pham">Sản phẩm</router-link> |
       <router-link to="/khach-hang">Khách hàng</router-link>
       <router-link to="/cung-cap">Nhà cung cấp</router-link>
-      <router-link to="/giao-dich">Giao dịch</router-link>
+      <router-link to="/tao-giao-dich">Tạo đơn hàng</router-link>
       <router-link to="/nhan-vien">Nhân viên</router-link>
+      <router-link to="/giao-dich">Chi tiết giao dịch</router-link>
     </div>
     <router-view/>
   </div>

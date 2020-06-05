@@ -5,7 +5,6 @@ import VueTableDynamic from 'vue-table-dynamic'
 
 Vue.config.productionTip = false
 Vue.use(VueTableDynamic)
-
 new Vue({
   router,
   render: h => h(App)
