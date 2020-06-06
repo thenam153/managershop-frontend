@@ -6,7 +6,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    login: true, // flase
+    login: false, // flase
     id: -1
   },
   mutations: {
