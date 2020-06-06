@@ -1,14 +1,10 @@
 <template>
-    <div>
-        {{title}}
-           
-            <div style="width: 800px">
-                <vue-table-dynamic 
-                    :params="table"  
-                    ref="table">
-                </vue-table-dynamic>
-            </div>
+<div class="container">
+    <div class="main">
+      <div class="title-main">{{title}}</div>
+      <vue-table-dynamic :params="table" @cell-change="onCellChange" ref="table"></vue-table-dynamic>
     </div>
+  </div>
 </template>
 
 <script>
