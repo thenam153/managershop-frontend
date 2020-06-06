@@ -327,17 +327,6 @@ input[type="text"]::-webkit-text-cancel-button {
   -webkit-appearance: searchfield-cancel-button;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  border: 1px solid var(--input-border-focus) !important;
-  -webkit-text-fill-color: var(--text-primary-color) !important;
-  -webkit-box-shadow: 0 0 0px 1000px var(--input-bg) inset !important;
-  transition: background-color 5000s ease-in-out 0.2s !important;
-}
 </style>
 <style lang="less">
 #app {
@@ -389,7 +378,7 @@ select:-webkit-autofill:focus {
   font-weight: bold;
   font-size: 17px;
   & > div {
-    height: 40px;
+    // height: 40px;
     display: flex;
     & > div {
       & > svg {
@@ -691,6 +680,92 @@ select:-webkit-autofill:focus {
       padding-right: 10px;
     }
   }
+}
+.dialog-overlay {
+  width          : 100vw;
+  height         : 100vh;
+  min-width      : 100vw;
+  min-height     : 100vh;
+  position       : relative;
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  position       : fixed;
+  top            : 0;
+  left           : 0;
+  z-index        : 10000;
+  background     : rgba(32, 33, 36, 0.83);
+}
+.dialog {
+  background-color   : var(--toolbar-bg-color);
+  width              : 300px;
+  padding            : 20px;
+  border-radius      : 10px;
+  border             : 1px solid var(--body-bg-color);
+  animation          : drop-menu-tab 0.5s;
+  animation-fill-mode: both;
+}
+.button-text-with-icon-center > *:nth-child(1) {
+    margin-right: 10px;
+}
+.title-with-btn {
+  display        : flex;
+  align-items    : center;
+  height         : 40px;
+  justify-content: space-between;
+
+  &>span {
+    color      : var(--text-primary-color);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  &>div {
+    display        : flex;
+    // width          : 100%;
+    justify-content: flex-end;
+  }
+}
+.search-box-with-icon {
+  position: relative;
+  color   : var(--button-icon-color);
+
+  &>svg {
+    position: absolute;
+    fill    : currentColor;
+    top     : 12px;
+    left    : 12px;
+    margin  : 0;
+    width   : unset;
+  }
+
+  &>input {
+    padding-left : 40px !important;
+    text-overflow: ellipsis;
+  }
+}
+.border-bottom-2px {
+  border-bottom: 2px solid var(--button-bg-color);
+}
+
+.space-20px {
+  width    : 20px;
+  min-width: 20px;
+}
+
+.space-10px {
+  width    : 10px;
+  min-width: 10px;
+}
+
+.space-height-20px {
+  height    : 20px;
+  min-height: 20px;
+}
+
+.space-height-10px {
+  height    : 10px;
+  min-height: 10px;
 }
 @keyframes zoom-dialog {
   0% {
